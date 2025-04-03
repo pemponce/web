@@ -3,10 +3,8 @@ import {createElement} from '../framework/render.js';
 
 function createHeaderComponentTemplate() {
     return (
-        `<header class="board-app__header">
-          <div class="board-app__inner">
-            <h1>Список задач</h1>
-          </div>
+        `<header>
+          <h1>Список задач</h1>
         </header>`
     );
 }
