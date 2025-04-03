@@ -1,130 +1,158 @@
-/* Общие стили */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+:root {
+    --default-corner-radius: 10px;
+    --default-font-size: 15px;
+}
+
+*{
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.board-app {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+body {
+    background-color: #eef4fb;
 }
 
-/* Header */
+main {
+    padding: 23px 28px;
+}
+
 header {
-    background-color: #333;
+    background-color: #2f80ed;
+}
+
+header h1 {
     color: white;
-    padding: 1rem;
-    text-align: center;
+    padding: 25px 35px;
 }
 
-header .title {
-    margin: 0;
-    font-size: 1.5rem;
+.add-new-task {
+    border-radius: var(--default-corner-radius);
+    background: white;
+    padding: 20px;
+    width: fit-content;
 }
 
-/* Форма добавления задачи */
-.add-task {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.add-new-task h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
 }
 
-.add-task__form {
+.add-new-task .bottom-group {
     display: flex;
-    gap: 1rem;
+    gap: 20px;
 }
 
-.add-task__input-wrapper {
-    flex-grow: 1;
+.add-new-task input[type=text] {
+    border-radius: var(--default-corner-radius);
+    outline: none;
+    padding: 10px;
+    font-size: var(--default-font-size);
+    color: #e4e1e1;
+    background-color: white;
+    border: 1px solid #e4e1e1;
 }
 
-.add-task__input-wrapper input {
+.add-new-task input[type=text]::placeholder {
+    font-size: var(--default-font-size);
+    color: #e4e1e1;
+}
+
+.add-new-task button {
+    background-color: #2f80ed;
+    color: white;
+    border-radius: var(--default-corner-radius);
+    padding: 13px 40px;
+    font-size: var(--default-font-size);
+    font-weight: bold;
+    cursor: pointer;
+    border: 0;
+}
+
+.add-new-task button:hover {
+    background-color: #0056b3;
+}
+
+.desk-tasks {
+    margin-top: 35px;
+    display: flex;
+    column-gap: 50px;
+}
+
+.display-tasks {
+    flex: 1 1 auto;
+}
+
+.display-tasks h3 {
+    padding: 10px 15px;
+    border-radius: var(--default-corner-radius);
+    background-color: #e3e3e3;
+    color: #68727b;
+    margin-bottom: 20px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.display-tasks li {
+    list-style-type: none;
+    font-weight: 500;
+    font-size: var(--default-font-size);
+    padding: 20px;
+    color: #000;
+    background-color: white;
+    border-left: 6px solid #e3e3e3;
+    border-radius: var(--default-corner-radius);
+    margin: 10px 0;
+}
+
+.clear-button {
+    background-color: #c9666c;
+    color: white;
+    padding: 15px 0;
+    border: 0px;
+    border-radius: var(--default-corner-radius);
     width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    font-weight: bold;
+    font-size: var(--default-font-size);
 }
 
-.add-task__button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.clear-button:hover {
+    background-color: #b3464d;
 }
 
-.add-task__button:hover {
-    background-color: #218838;
+.backlog h3 {
+    background-color: #e3e3e3;
+    color: #8e9092;
 }
 
-/* Доска задач */
-.taskboard {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.backlog li {
+    border-left: 5px solid #e3e3e3;
 }
 
-.taskboard__wrapper {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
+.processing h3 {
+    background-color: #d6e7ff;
+    color: #5c9bf2;
 }
 
-/* Группа задач */
-.taskboard__group {
-    min-width: 250px;
-    background-color: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
+.processing li {
+    border-left: 5px solid #d6e7ff;
 }
 
-.taskboard__group-title {
-    margin: 0 0 1rem 0;
-    font-size: 1.2rem;
-    color: #555;
+.done h3 {
+    background-color: #d7f9e0;
+    color: #8acea0;
 }
 
-.taskboard__tasks {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.done li {
+    border-left: 5px solid #d7f9e0;
 }
 
-/* Отдельная задача */
-.task {
-    background-color: white;
-    padding: 0.75rem;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+.basket h3 {
+    background-color: #fbe3e3;
+    color: #da8e8b;
 }
 
-.task__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.task__text {
-    margin: 0;
-}
-
-.task__delete {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #dc3545;
-}
-
-.task__delete:hover {
-    color: #c82333;
+.basket li {
+    border-left: 5px solid #fbe3e3;
 }

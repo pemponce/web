@@ -1,32 +1,36 @@
-import {createElement, render} from '../framework/render.js';
-import TaskComponent from './task-component.js';
+import {createElement} from "../framework/render.js";
+import { StatusLabel, Status } from "../../const.js";
 
-function createTaskListComponentTemplate() {
-    return `<div class="taskboard__group">
-    <h2 class="taskboard__group-title">Название списка</h2>
-    <div class="taskboard__tasks">
-      <!-- Здесь будут задачи -->
-    </div>
-  </div>`;
+
+function createTaskListComponentTemplate(label, status) {
+    return (
+        `<div class="display-tasks ${status}">
+          <h3>${label}</h3>
+          <ul class="task-container">
+          </ul>
+        </div>`
+    );
 }
 
-export default class TaskListComponent {
+export default class TasksListComponent {
+    constructor(status) {
+        this.status = status;
+    }
+
     getTemplate() {
-        return createTaskListComponentTemplate();
+        const label = StatusLabel[this.status];
+        return createTaskListComponentTemplate(label, this.status);
     }
 
     getElement() {
         if (!this.element) {
             this.element = createElement(this.getTemplate());
-            const tasksContainer = this.element.querySelector('.taskboard__tasks');
-
-            // Рендерим 4 задачи в каждом списке
-            for (let i = 0; i < 4; i++) {
-                render(new TaskComponent(), tasksContainer);
-            }
         }
+
+
         return this.element;
     }
+
 
     removeElement() {
         this.element = null;

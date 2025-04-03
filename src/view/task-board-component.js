@@ -1,19 +1,17 @@
 import {createElement} from "../framework/render.js";
 
-function createTaskComponentTemplate(task) {
+function createTaskBoardComponentTemplate() {
     return (
-        `<li>${task}</li>`
+        `<section class="desk-tasks">
+        </section>`
     );
 }
 
-export default class TaskComponent {
-    constructor(tasks) {
-        this.tasks = tasks;
+export default class TaskBoardComponentComponent {
+    getTemplate() {
+        return createTaskBoardComponentTemplate();
     }
 
-    getTemplate() {
-        return createTaskComponentTemplate(this.tasks);
-    }
 
     getElement() {
         if (!this.element) {

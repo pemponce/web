@@ -1,50 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>тасклист</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Ичанкин Лев Николаевич</title>
 </head>
-<body>
 
-<div class="container">
-    <h1 class="title">Самосов Артем</h1>
-
-    <div class="idea-input">
-        <input type="text" id="ideaInput" placeholder="Введите новую идею..." />
-        <button class="add-btn" id="addIdeaBtn">+ Добавить идею</button>
-    </div>
-
-    <div class="idea-list">
-        <div class="column new-ideas">
-            <h2>Новые идеи</h2>
-            <div class="idea" draggable="true">Изучить Python</div>
-            <div class="idea" draggable="true">Создать мобильное приложение</div>
-            <div class="idea" draggable="true">Написать книгу</div>
-        </div>
-
-        <div class="column in-development">
-            <h2>В разработке</h2>
-            <div class="idea" draggable="true">Заказать пиццу</div>
-            <div class="idea" draggable="true">Купить новые наушники</div>
-        </div>
-
-        <div class="column completed">
-            <h2>Завершено</h2>
-            <div class="idea" draggable="true">Позвонить другу</div>
-            <div class="idea" draggable="true">Закончить проект</div>
-        </div>
-
-        <div class="column archive">
-            <h2>Архив</h2>
-            <div class="idea" draggable="true">Сходить в кино</div>
-            <div class="idea" draggable="true">Прочитать новую книгу</div>
-            <button class="clear-btn" id="clearArchiveBtn">✖ Очистить архив</button>
-        </div>
-    </div>
-</div>
-
-<script src="script.js"></script>
+<body class="page-body">
+    <main class="main-content">
+        <section class="add-new-task-component"></section>
+    </main>
+    <script src="../src/main.js" type="module"></script>
 </body>
 </html>
