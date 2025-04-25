@@ -12,4 +12,11 @@ const StatusLabel = {
     [Status.TRASH]: `Корзина`
 }
 
-export {Status, StatusLabel};
+const OrderPosition = {
+    START: `start`,
+    END: `end`,
+    BELOW: `below`,
+    ABOVE: `above`
+}
+
+export {Status, StatusLabel, OrderPosition};

@@ -1,11 +1,11 @@
-import {createElement} from '../framework/render.js';
+import {AbstractComponent} from "../framework/view/abstract-component.js";
 
 function createFormAddTaskComponentTemplate() {
     return (
         `<form class=add-new-task>
             <h1>Новая задача</h1>
             <div class="bottom-group">
-                <input placeholder="Название задачи..." type="text">
+                <input class=add-new placeholder="Название задачи..." type="text">
                 <button>
                     <svg width="15" height="15" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="10.0833" y="3.66663" width="1.83333" height="14.6667" fill="white" />
@@ -19,22 +19,21 @@ function createFormAddTaskComponentTemplate() {
     );
 }
 
-export default class FormAddTaskComponent {
-    getTemplate() {
+export default class FormAddTaskComponent extends AbstractComponent {
+    #handleClick = null;
+
+    constructor({onClick}) {
+        super();
+        this.#handleClick = onClick;
+        this.element.addEventListener('submit', this.#clickHandler);
+    }
+
+    #clickHandler = (evt) => {
+        evt.preventDefault();
+        this.#handleClick();
+    }
+
+    get template() {
         return createFormAddTaskComponentTemplate();
-    }
-
-
-    getElement() {
-        if (!this.element) {
-            this.element = createElement(this.getTemplate());
-        }
-
-        return this.element;
-    }
-
-
-    removeElement() {
-        this.element = null;
     }
 }

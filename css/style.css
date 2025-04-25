@@ -77,11 +77,13 @@ header h1 {
 .desk-tasks {
     margin-top: 35px;
     display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
     column-gap: 50px;
 }
 
 .display-tasks {
-    flex: 1 1 auto;
+    width: 40%;
 }
 
 .display-tasks h3 {
@@ -104,6 +106,15 @@ header h1 {
     border-left: 6px solid #e3e3e3;
     border-radius: var(--default-corner-radius);
     margin: 10px 0;
+    word-break: break-word;
+}
+
+.stub {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%2368727bFF' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 10px;
+    color: #68727b;
+    font-weight: 500;
+    padding: 20px;
 }
 
 .clear-button {
@@ -114,6 +125,7 @@ header h1 {
     border-radius: var(--default-corner-radius);
     width: 100%;
     font-weight: bold;
+    cursor: pointer;
     font-size: var(--default-font-size);
 }
 
